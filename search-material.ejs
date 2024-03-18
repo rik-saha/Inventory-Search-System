@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Material </title>
+    </head>
+    <body>
+        <h1>Search Here</h1>
+        <form action="/search1">
+            <input type="search" name="Material" placeholder="SAP Material Number">
+            <input type="search" name="Valuation_Area" placeholder="Valuation Area">
+            <!-- <input type="search" name="SAP_Material_Num" placeholder="SAP Number">
+            <input type="search" name="Plant_Code" placeholder="Plant Code"> -->
+            
+            <input type="submit" value="Search">
+        </form>
+        
+        <form action="/search-item">
+            <button type="submit">Go to ITEM MASTER Page</button>
+          </form>
+
+
+        <h1>Materials</h1>
+         <table border="2" width="100%">
+            <tr>
+             
+                 <th>Material</th> 
+                <th>Valuation_Area</th>
+                <th>Total_Stock</th>
+                <th>Total_Value</th>
+                <th>Moving_Price</th>
+                
+
+            </tr>
+            <% if(material2.length >0) { %>
+
+            <% for(var i=0;i<material2.length; i++) { %>
+                <tr> 
+                    <td><%- material2[i].Material %></td> 
+                    <td><%- material2[i].Valuation_Area %></td>
+                    <td><%- material2[i].Total_Stock %></td>
+                    <td><%- material2[i].Total_Value %></td> 
+                       
+                    <td><%- material2[i].Moving_price %></td>
+                </tr>    
+
+                <% } %>
+
+                <% }else{ %>
+                    <h1>NO DATA FOUND</h1>
+
+                <% } %>    
+
+
+         </table>
+         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.2.0/he.min.js"></script> -->
+
+    </body>
+</html>

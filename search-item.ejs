@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> ITEM MASTER </title>
+    </head>
+    <body>
+        <h1>Search Here</h1>
+        <form action="/search">
+            <input type="search" name="SAP_Material_Num" placeholder="SAP Number">
+            <input type="search" name="ITEM_8DIGIT" placeholder="8 DIGIT">
+            <input type="search" name="ITEM_11DIGIT" placeholder="11 DIGIT">
+            
+            <input type="search" name="Plant_Code" placeholder="Plant Code">
+            
+            <input type="submit" value="Search">
+        </form>
+        <form action="/search-material">
+            <button type="submit">Go to Material Page</button>
+          </form>
+
+
+        <h1>ITEM MASTER</h1>
+         <table border="2" width="100%">
+            <tr>
+                <th>ITEM 8DIGIT</th>
+                <th>ITEM 11DIGIT</th>
+                <th>UOM CODE</th>
+                <th>MACHINE</th> 
+                <th>newDESC</th>
+                <th>newPartno</th>
+                <th>SAP Material Num</th>
+                <!-- <th>Material</th> -->
+                <th>Valuation Area</th>
+                <th>Total Stock</th>
+                <th>Total_Value</th>
+                <!-- <th>Price_Control</th> -->
+                <th>Moving_Price</th>
+                <!-- <th>Plant_Code</th>                 -->
+                <th>Plant_Name</th>
+
+            </tr>
+            <% if(item_master.length >0) { %>
+
+            <% for(var i=0;i<item_master.length; i++) { %>
+                <tr> 
+                    <td><%- item_master[i].ITEM_8DIGIT %></td>
+                    <td><%- item_master[i].ITEM_11DIGIT %></td>
+                    <td><%- item_master[i].UOM_CODE %></td>
+                     <td><%- item_master[i].MACHINE %></td>
+                    <td><%= item_master[i].newDesc %></td>
+                    <td><%- item_master[i].newPartno %></td>
+                    <td><%- item_master[i].SAP_Material_Num %></td>
+                    <!-- <td><%- item_master[i].Material %></td> -->
+                    <td><%- item_master[i].Valuation_Area %></td>
+                    <td><%- item_master[i].Total_Stock %></td>
+                    <td><%- item_master[i].Total_Value %></td>
+                    <!-- <td><%- item_master[i].Price_Control %></td> -->
+                    <td><%- item_master[i].Moving_price %></td>
+                    <!-- <td><%- item_master[i].Plant_Code %></td> -->
+                    <td><%- item_master[i].Plant_Name %></td>
+
+
+                </tr>    
+
+                <% } %>
+
+                <% }else{ %>
+                    <h1>NO DATA FOUND</h1>
+
+                <% } %>    
+
+
+         </table>
+         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.2.0/he.min.js"></script> -->
+
+    </body>
+</html>

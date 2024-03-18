@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> LOCATION </title>
+    </head>
+    <body>
+
+        <!-- <h1>Search Here</h1>
+        <form action="/search">
+            <input type="search" name="Plant_Code" placeholder="Plant Code">
+            <input type="search" name="Plant_Name" placeholder="Plant Name">
+            <input type="submit" value="Search">
+        </form> -->
+
+        <h1>LOCATIONS</h1>
+         <table border="2" width="100%">
+            <tr>
+                <th>Plant_Code</th>
+                <th>Plant_Name</th>
+            </tr>
+            <% if(location.length >0) { %>
+
+            <% for(var i=0;i<location.length;i++) { %>
+                <tr> 
+                    <td><%- location[i].Plant_Code %></td>
+                    <td><%- location[i].Plant_Name %></td>
+
+                </tr>    
+
+                <% } %>
+
+                <% }else{ %>
+                    <h1>NO DATA FOUND</h1>
+
+                <% } %>    
+
+
+         </table>
+    </body>
+</html>
